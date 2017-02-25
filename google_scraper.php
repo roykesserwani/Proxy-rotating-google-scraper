@@ -76,29 +76,6 @@ $index = intval(fgets(fopen($company_index_file, 'r')));
 $max_index = 1000000;
 
 
-for ($i = $index; $i < $max_index; $i += 10) {
-  if ($i == 50) {
-    break;
-  }
-
-  $query = buildOwlerUrl($i);
-  /*
-  $scrapedHtml = scrape_google($query, 0, $ipaddresses[$currentip]);
-  echo "current: ".$i." - ".$query;
-  if ($scrapedHtml !== null) {
-
-  }
-  */
-
-  $currentip = ($currentip + 1) % count($ipaddresses);
-}
-
-
-
-
-
-
-
 function buildOwlerUrl($current_index) {
   $urlstring = "";
   for ($i = $current_index; $i < $current_index + 10; $i++) {
